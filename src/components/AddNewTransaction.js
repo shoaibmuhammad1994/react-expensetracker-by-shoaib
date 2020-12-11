@@ -11,6 +11,11 @@ export const AddNewTransaction = () => {
     const onSubmit = e => {
         e.preventDefault();
 
+        if (Number(amount) === 0) {
+            alert("Amount can't be 0!!!")
+            return false;
+        }
+
         const newTransaction = {
             id: Math.floor(Math.random() * 100000000),
             text,
